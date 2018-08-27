@@ -5,5 +5,6 @@ print("Example: ax^2+bx+c")
 strQuadratic = input("f(x)=")
 
 def quadraticSplitter(strToSplit):
-    
+    import re
+    match = re.search("EXPRESSION",strQuadratic)
     return splitResult
