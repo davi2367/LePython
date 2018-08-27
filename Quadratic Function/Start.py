@@ -13,7 +13,7 @@ strQuadratic = ""
 #Verifyes that the user imputted Quadratic Function, is in correct format. 
 def quadraticStrVerifyer(strToVerify):
     import re
-    verifyResult = re.search(r"\d{1,5}x\^2[+|-]\d{1,5}x[+|-]\d{1,5}",strToVerify)
+    verifyResult = re.search(r"[0-9,]{1,5}x\^2[+|-][0-9,]{1,5}x[+|-][0-9,]{1,5}",strToVerify)
     return verifyResult
 
 #
