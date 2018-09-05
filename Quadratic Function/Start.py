@@ -5,7 +5,6 @@
 strQuadratic = ""
 
 
-
 #############################################################################
 # Functions
 #############################################################################
@@ -19,12 +18,21 @@ def quadraticStrVerifyer(strToVerify):
 #Splits the Quadratic functions into 3 variables, and returs them as float(decimal).
 def quadraticSplitter(strToSplit):
     import re
+    #Finds A, B and C, and saves them in Variables
     quadraticVarA = re.search(r"[0-9,]{1,5}(?=x\^2)",strToSplit)
-    quadraticVarB = re.search(r"[0-9,]{1,5}(?=x[^^])",strToSplit)
+    quadraticVarB = re.search(r"[0-9,]{1,5}(?=x[^^])",(strToSplit+" "))
     quadraticVarC = re.search(r"[0-9,]{1,5}$",strToSplit)
 
-    return float(quadraticVarA.group(0)), float(quadraticVarB.group(0)), float(quadraticVarC.group(0))
+    #Filters out the exact number, and saves it as a decimal (float)
+    fltQuadraticVarA = float(quadraticVarA.group(0))
+    fltQuadraticVarB = float(quadraticVarB.group(0))
+    fltQuadraticVarC = 0
 
+    #If "C" has been defined, specifies it to use the defined number. 
+    if(quadraticVarC):
+        fltQuadraticVarC = float(quadraticVarC.group(0))
+
+    return fltQuadraticVarA, fltQuadraticVarB, fltQuadraticVarC
 
 
 #############################################################################
