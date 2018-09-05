@@ -35,6 +35,28 @@ def quadraticSplitter(strToSplit):
     return fltQuadraticVarA, fltQuadraticVarB, fltQuadraticVarC
 
 
+#Finds discriminant and prints how many solutions there are based on the discriminant
+def findDiscriminant(fltQuadraticVarA,fltQuadraticVarB,fltQuadraticVarC):
+    disciminant = fltQuadraticVarB**2-4*fltQuadraticVarA*fltQuadraticVarC
+
+    if(disciminant < 0):
+        print("Equation has no solution!")
+    elif (disciminant > 0):
+        print("Equation has two solutions!")
+    else:
+        print("Equation has one solution!")
+
+    return float(disciminant)
+
+#Vertex
+def findVertex(discriminant,fltQuadraticVarA,fltQuadraticVarB):
+    fltVertexX = (-(fltQuadraticVarB))/(2*fltQuadraticVarA)
+    fltVertexY = (-(discriminant))/(4*fltQuadraticVarA)
+
+    return float(fltVertexX),float(fltVertexY)
+
+
+
 #############################################################################
 # Defunctionised code
 #############################################################################
@@ -53,4 +75,6 @@ if not quadraticStrVerifyer(strQuadratic):
 #Splitting Quadratic Function into an array "arQuadraticVars"
 arQuadraticVars = quadraticSplitter(strQuadratic)
 
+#Finds the discriminant
+fltQuadraticVarDisc = findDiscriminant(arQuadraticVars[0],arQuadraticVars[1],arQuadraticVars[2])
 
