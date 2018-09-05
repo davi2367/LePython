@@ -16,7 +16,7 @@ def quadraticStrVerifyer(strToVerify):
     verifyResult = re.search(r"[0-9,]{1,5}x\^2[+|-][0-9,]{1,5}x[+|-][0-9,]{1,5}",strToVerify)
     return verifyResult
 
-#
+#Splits the Quadratic functions into 3 variables, and returs them as float(decimal).
 def quadraticSplitter(strToSplit):
     import re
     quadraticVarA = re.search(r"[0-9,]{1,5}(?=x\^2)",strToSplit)
@@ -42,7 +42,7 @@ if not quadraticStrVerifyer(strQuadratic):
     print("Invalid Quadratic Function")
     quit()
 
-#Splitting Quadratic Function
+#Splitting Quadratic Function into an array "arQuadraticVars"
 arQuadraticVars = quadraticSplitter(strQuadratic)
 
 
