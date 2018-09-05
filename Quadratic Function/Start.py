@@ -19,8 +19,11 @@ def quadraticStrVerifyer(strToVerify):
 #
 def quadraticSplitter(strToSplit):
     import re
+    quadraticVarA = re.search(r"[0-9,]{1,5}(?=x\^2)",strToSplit)
+    quadraticVarB = re.search(r"[0-9,]{1,5}(?=x[^^])",strToSplit)
+    quadraticVarC = re.search(r"[0-9,]{1,5}$",strToSplit)
 
-    return splitResult
+    return float(quadraticVarA.group(0)), float(quadraticVarB.group(0)), float(quadraticVarC.group(0))
 
 
 
@@ -40,4 +43,6 @@ if not quadraticStrVerifyer(strQuadratic):
     quit()
 
 #Splitting Quadratic Function
+arQuadraticVars = quadraticSplitter(strQuadratic)
+
 
