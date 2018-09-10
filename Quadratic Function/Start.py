@@ -12,16 +12,16 @@ strQuadratic = ""
 #Verifyes that the user imputted Quadratic Function, is in correct format. 
 def quadraticStrVerifyer(strToVerify):
     import re
-    verifyResult = re.search(r"[0-9,]{1,5}x\^2[+|-][0-9,]{1,5}x([+|-][0-9,]{1,5})?",strToVerify)
+    verifyResult = re.search(r"[0-9.]{1,5}x\^2[+|-][0-9.]{1,5}x([+|-][0-9.]{1,5})?",strToVerify)
     return verifyResult
 
 #Splits the Quadratic functions into 3 variables, and returs them as float(decimal).
 def quadraticSplitter(strToSplit):
     import re
     #Finds A, B and C, and saves them in Variables
-    quadraticVarA = re.search(r"[-]?[0-9,]{1,5}(?=x\^2)",strToSplit)
-    quadraticVarB = re.search(r"[-]?[0-9,]{1,5}(?=x[^^])",(strToSplit+" ")) #Added a space in order to be able to verify
-    quadraticVarC = re.search(r"[-]?[0-9,]{1,5}$",strToSplit)
+    quadraticVarA = re.search(r"[-]?[0-9.]{1,5}(?=x\^2)",strToSplit)
+    quadraticVarB = re.search(r"[-]?[0-9.]{1,5}(?=x[^^])",(strToSplit+" ")) #Added a space in order to be able to verify
+    quadraticVarC = re.search(r"[-]?[0-9.]{1,5}$",strToSplit)
 
     #Filters out the exact number, and saves it as a decimal (float)
     fltQuadraticVarA = float(quadraticVarA.group(0))
