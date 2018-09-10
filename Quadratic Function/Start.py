@@ -20,7 +20,7 @@ def quadraticSplitter(strToSplit):
     import re
     #Finds A, B and C, and saves them in Variables
     quadraticVarA = re.search(r"[-]?[0-9,]{1,5}(?=x\^2)",strToSplit)
-    quadraticVarB = re.search(r"[-]?[0-9,]{1,5}(?=x[^^])",(strToSplit+" "))
+    quadraticVarB = re.search(r"[-]?[0-9,]{1,5}(?=x[^^])",(strToSplit+" ")) #Added a space in order to be able to verify
     quadraticVarC = re.search(r"[-]?[0-9,]{1,5}$",strToSplit)
 
     #Filters out the exact number, and saves it as a decimal (float)
@@ -55,7 +55,7 @@ def findVertex(discriminant,fltQuadraticVarA,fltQuadraticVarB):
 
     return float(fltVertexX),float(fltVertexY)
 
-#Roots
+#Finding the roots. 
 def findQuadraticSolutions(discriminant, fltQuadraticVarA, fltQuadraticVarB):
     import math
 
@@ -109,12 +109,4 @@ if(fltQuadraticVarDisc >= 0):
     #Find the Y values to the X points
     arQuadraticRoots = findQuadraticRoots(arQuadraticSolutions,arQuadraticVars[0],arQuadraticVars[1],arQuadraticVars[2])
     print("The roots of the function are: ("+str(arQuadraticRoots[0][0])+","+str(arQuadraticRoots[0][1])+"), ("+str(arQuadraticRoots[1][0])+","+str(arQuadraticRoots[1][1])+")")
-
-
-
-
-
-
-
-
 
