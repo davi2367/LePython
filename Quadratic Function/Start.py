@@ -96,7 +96,7 @@ arQuadraticVars = quadraticSplitter(strQuadratic)
 fltQuadraticVarDisc = findDiscriminant(arQuadraticVars[0],arQuadraticVars[1],arQuadraticVars[2])
 print("The discriminant is: "+str(fltQuadraticVarDisc))
 
-#Calculates and displays the vertex points to the user with 2 decimals. 
+#Calculates and displays the vertex point to the user with 2 decimals. 
 arVertexPoint = findVertex(fltQuadraticVarDisc,arQuadraticVars[0],arQuadraticVars[1])
 print("The vertex point is: ("+str(round(arVertexPoint[0],2))+","+str(round(arVertexPoint[1],2))+")")
 
